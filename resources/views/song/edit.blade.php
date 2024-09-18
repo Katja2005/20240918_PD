@@ -1,10 +1,9 @@
 <x-app-layout>
     <div class="container mx-auto max-w-lg mt-10 p-6 bg-white shadow-md rounded-lg">
         <h1 class="text-2xl font-bold mb-6 text-center">Edit Song</h1>
-        <form action="{{ route('song.edit') }}" method="POST" class="space-y-4">
+        <form action="{{ route('song.edit' , $song->id ) }}" method="POST" class="space-y-4">
             @csrf
-            @method('PUT')
-
+     
             <div class="form-group">
                 <label for="name" class="block text-sm font-medium text-gray-700">Title</label>
                 <input value="{{ $song->title }}" type="text" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" id="name" name="title" required>
